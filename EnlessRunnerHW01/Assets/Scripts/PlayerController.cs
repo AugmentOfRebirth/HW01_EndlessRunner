@@ -101,17 +101,17 @@ public class PlayerController : MonoBehaviour
     //    }
     //}
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("DoubleJump"))
-    //    {
-    //        maxNumJumps = 2;
-    //        //Destroy(collision.gameObject);
-    //    }
-    //    else if (collision.gameObject.CompareTag("OB"))
-    //    {
-    //        //restart the level
-    //        SceneManager.LoadScene("Level01");
-    //    }
-    //}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //if (collision.gameObject.CompareTag("DoubleJump"))
+        //{
+        //    maxNumJumps = 2;
+        //    //Destroy(collision.gameObject);
+        //}
+        if (collision.gameObject.CompareTag("OB"))
+        {
+            //restart the level
+            SceneManager.LoadScene("Level01");
+        }
+    }
 }
