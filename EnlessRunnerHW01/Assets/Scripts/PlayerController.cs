@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     //private bool grounded = false;
     private int maxNumJumps;
     private int numJumps;
+    private Animator playerAnimator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,7 +20,7 @@ public class PlayerController : MonoBehaviour
         //because the rigidbody2d is attached to the player
         //and this script is also attached to the player
         playerRigidBody = GetComponent<Rigidbody2D>();
-
+        playerAnimator = GetComponent<Animator>();
         maxNumJumps = 1;
         numJumps = 1;
     }
@@ -44,9 +46,19 @@ public class PlayerController : MonoBehaviour
 
         if (inputHorizontal != 0)
         {
+            
+
             //the linear velocity is not set unless moving to allow the ground to move the player
             playerRigidBody.linearVelocity = new Vector2(movementSpeed * inputHorizontal, playerRigidBody.linearVelocity.y);
+
+            
             flipPlayerSprite(inputHorizontal);
+
+            playerAnimator.SetBool("isWalking", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("isWalking", false);
         }
 
         //Debug.Log(inputHorizontal);
