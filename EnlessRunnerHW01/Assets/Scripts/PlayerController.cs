@@ -40,10 +40,12 @@ public class PlayerController : MonoBehaviour
         //-1 - left arrow or a pressed
         inputHorizontal = Input.GetAxisRaw("Horizontal");
 
-        playerRigidBody.linearVelocity = new Vector2(movementSpeed * inputHorizontal, playerRigidBody.linearVelocity.y);
+        
 
         if (inputHorizontal != 0)
         {
+            //the linear velocity is not set unless moving to allow the ground to move the player
+            playerRigidBody.linearVelocity = new Vector2(movementSpeed * inputHorizontal, playerRigidBody.linearVelocity.y);
             flipPlayerSprite(inputHorizontal);
         }
 
@@ -86,6 +88,9 @@ public class PlayerController : MonoBehaviour
         //    //restart the level
         //    SceneManager.LoadScene("Level01");
         //}
+
+
+        //Debug.Log("Grounded");
     }
 
     //private void OnCollisionExit2D(Collision2D collision)
