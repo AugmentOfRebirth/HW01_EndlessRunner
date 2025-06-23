@@ -92,10 +92,9 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(collision.gameObject);
         if (collision.gameObject.CompareTag("Ground"))
         {
-            //grounded = true;
             numJumps = 1;
         }
-        //else if (collision.gameObject.CompareTag("Bat"))
+        //else if (collision.gameObject.CompareTag("Enemy"))
         //{
         //    //restart the level
         //    SceneManager.LoadScene("Level01");
@@ -104,15 +103,6 @@ public class PlayerController : MonoBehaviour
 
         //Debug.Log("Grounded");
     }
-
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if(collision.gameObject.CompareTag("Grounded"))
-    //    {
-    //        grounded = false;
-    //    }
-    //}
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //if (collision.gameObject.CompareTag("DoubleJump"))

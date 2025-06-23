@@ -360,9 +360,9 @@ GameObject:
   - component: {fileID: 7760564981779390621}
   - component: {fileID: 5735094194965669977}
   - component: {fileID: 2850933185822576583}
-  - component: {fileID: 4661609813642205052}
+  - component: {fileID: -2729213657746783983}
   m_Layer: 0
-  m_Name: Spikerman
+  m_Name: Spikerman_jumper
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -469,7 +469,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.0053596795}
   m_Radius: 1.0039315
---- !u!114 &4661609813642205052
+--- !u!114 &-2729213657746783983
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -478,10 +478,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5247241576986433005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42cff609b4ce6064590f0af1a49b0292, type: 3}
+  m_Script: {fileID: 11500000, guid: be06c125c6d5a0c4393f1940d94f531f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  jumpForce: 20
 --- !u!1 &5341041566217700484
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,7 +653,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1710791902, guid: d9287437f8591744daf272a1de450bca, type: 3}
+  m_Sprite: {fileID: 1710791902, guid: 5e38e8ba50c7ea848ba2c751fc7030bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
