@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ee7768f4648f2794d9436805fca4db02
+guid: 3561fe23eae06254cab9eac9c0fbeb57
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -411807539478165458
-    second: smiley_selfmade_background_gimped_titlescreenmaybe_0
+      213: 3232259584030451204
+    second: powerup_money_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: smiley_selfmade_background_gimped_titlescreenmaybe_0
+      name: powerup_money_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1000
-        height: 749
+        x: 23
+        y: 55
+        width: 218
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e2883958937f84af0800000000000000
-      internalID: -411807539478165458
+      spriteID: 406acf767fa4bdc20800000000000000
+      internalID: 3232259584030451204
       vertices: []
       indices: 
       edges: []
