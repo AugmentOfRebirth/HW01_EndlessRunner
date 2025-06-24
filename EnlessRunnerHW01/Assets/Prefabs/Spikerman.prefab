@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2973427943490023113}
   - component: {fileID: 6508609386119698137}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spike_topright
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2684912283190928848}
   - component: {fileID: 1462930253631320629}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spike_bottomleft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4418007142913469392}
   - component: {fileID: 4889639429926155879}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spike_bottomright
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4130839907439512923}
   - component: {fileID: 2895315479968567751}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spike_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 5735094194965669977}
   - component: {fileID: 2850933185822576583}
   - component: {fileID: 4661609813642205052}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spikerman
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8873124144714560520}
   - component: {fileID: 7386889121580846196}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spike_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 117875584481762620}
   - component: {fileID: 660817127171353656}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spike enemy_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -674,7 +674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5407580962999521267}
   - component: {fileID: 1456406006361276592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spike_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -761,7 +761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7520638030413307018}
   - component: {fileID: 1227792230672966323}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spike_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -848,7 +848,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6421464151138796565}
   - component: {fileID: 8175894131398773560}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spike_topleft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
