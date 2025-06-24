@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private int maxNumJumps;
     private int numJumps;
     private Animator playerAnimator;
+    public GameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -110,10 +111,14 @@ public class PlayerController : MonoBehaviour
         //    maxNumJumps = 2;
         //    //Destroy(collision.gameObject);
         //}
-        if (collision.gameObject.CompareTag("OB"))
+        //if (collision.gameObject.CompareTag("OB"))
+        //{
+        //    //restart the level
+        //    SceneManager.LoadScene("Level01");
+        //}
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            //restart the level
-            SceneManager.LoadScene("Level01");
+            //gameManager.gameOver();
         }
     }
 }

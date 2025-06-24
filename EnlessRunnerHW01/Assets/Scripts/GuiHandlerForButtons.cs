@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour
+public class GuiHandlerForButtons : MonoBehaviour
 {
     public void resumeGame()
     {

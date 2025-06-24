@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PowerupMoney : MonoBehaviour
+public class Powerup : MonoBehaviour
 {
     public SurfaceEffector2D surfaceEffector;
     private Rigidbody2D rb;
