@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    void spawnEnemy()
+    private void spawnEnemy()
     {
         GameObject enemyToSpawn;
         // Randomly choose 0 or 1

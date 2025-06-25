@@ -9,8 +9,10 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     private float inputHorizontal;
     //private bool grounded = false;
-    private int maxNumJumps;
-    private int numJumps;
+    //private int maxNumJumps;
+    //private int numJumps;
+    private bool canJump = false;
+    private bool isJumping = false;
     private Animator playerAnimator;
     public GameManager gameManager;
 
@@ -22,8 +24,8 @@ public class PlayerController : MonoBehaviour
         //and this script is also attached to the player
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-        maxNumJumps = 1;
-        numJumps = 1;
+        //maxNumJumps = 1;
+        //numJumps = 1;
     }
 
     // Update is called once per frame
@@ -45,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
         
 
-        if (inputHorizontal != 0)
+        if (inputHorizontal != 0 && !gameManager.isPaused)
         {
             
 
@@ -79,30 +81,39 @@ public class PlayerController : MonoBehaviour
 
     private void jump()
     {
-        if (Input.GetKey(KeyCode.Space) && numJumps <= maxNumJumps)
+        if (Input.GetKeyDown(KeyCode.Space) && canJump)
         {
             playerRigidBody.linearVelocity = new Vector2(playerRigidBody.linearVelocity.x, jumpForce);
-
-            numJumps++;
+            isJumping = true;
+            canJump = false;
         }
-        
+
+        // Shorten jump if released early
+        if (Input.GetKeyUp(KeyCode.Space) && isJumping)
+        {
+            // Cut the upward velocity to make jump shorter
+            playerRigidBody.linearVelocity = new Vector2(playerRigidBody.linearVelocity.x, playerRigidBody.linearVelocity.y * 0.5f);
+            isJumping = false;
+        }
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Debug.Log(collision.gameObject);
         if (collision.gameObject.CompareTag("Ground"))
         {
-            numJumps = 1;
+            canJump = true;
+        }
+        else if (collision.gameObject.CompareTag("Enemy"))
+        {
+            gameManager.gameOver();
         }
         //else if (collision.gameObject.CompareTag("Enemy"))
         //{
         //    //restart the level
         //    SceneManager.LoadScene("Level01");
         //}
-
-
-        //Debug.Log("Grounded");
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -116,9 +127,6 @@ public class PlayerController : MonoBehaviour
         //    //restart the level
         //    SceneManager.LoadScene("Level01");
         //}
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            //gameManager.gameOver();
-        }
+        
     }
 }
