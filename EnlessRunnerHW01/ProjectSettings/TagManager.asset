@@ -8,6 +8,9 @@ TagManager:
   - OB
   - Enemy
   - PlayerWall
+  - Score
+  - Speed
+  - RedDeath
   layers:
   - Default
   - TransparentFX

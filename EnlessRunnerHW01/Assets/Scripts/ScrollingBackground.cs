@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class ScrollingBackground : MonoBehaviour
 {
-    public float speed;
+    public float speedHorizontal;
+    public float speedVertical;
 
     [SerializeField]
     private Renderer bgRenderer;
@@ -10,6 +11,6 @@ public class ScrollingBackground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bgRenderer.material.mainTextureOffset += new Vector2(speed * Time.deltaTime, 0);
+        bgRenderer.material.mainTextureOffset += new Vector2(speedHorizontal * Time.deltaTime, speedVertical * Time.deltaTime);
     }
 }

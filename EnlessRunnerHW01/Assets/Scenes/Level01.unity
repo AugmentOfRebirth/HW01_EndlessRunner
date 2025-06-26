@@ -420,7 +420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af898fb882daaa7418ddb0ebe82d33a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.037
+  speedHorizontal: 0.04
+  speedVertical: 0
   bgRenderer: {fileID: 166012779}
 --- !u!23 &166012779
 MeshRenderer:
@@ -2568,7 +2569,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af898fb882daaa7418ddb0ebe82d33a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speedHorizontal: 0.1
+  speedVertical: 0
   bgRenderer: {fileID: 2014714600}
 --- !u!1001 &8494307298423631193
 PrefabInstance:
