@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
     //this is a variable for a rigidbody that is attached to the player
     private Rigidbody2D playerRigidBody;
     public float movementSpeed;
+    public float InitialMovementSpeed = 1f;
+    private float tempIMS;
+    public float InitialMovementSpeedMult;
     public float jumpForce;
     private float inputHorizontal;
     //private bool grounded = false;
@@ -26,6 +29,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         //maxNumJumps = 1;
         //numJumps = 1;
+        tempIMS = InitialMovementSpeed;
     }
 
     // Update is called once per frame
@@ -51,8 +55,20 @@ public class PlayerController : MonoBehaviour
         {
             
 
+            if (InitialMovementSpeed < movementSpeed)
+            {
+                playerRigidBody.linearVelocity = new Vector2(InitialMovementSpeed * inputHorizontal, playerRigidBody.linearVelocity.y);
+            }
+            else
+            {
+                playerRigidBody.linearVelocity = new Vector2(movementSpeed * inputHorizontal, playerRigidBody.linearVelocity.y);
+            }
+
+
+            InitialMovementSpeed += InitialMovementSpeedMult;
+
             //the linear velocity is not set unless moving to allow the ground to move the player
-            playerRigidBody.linearVelocity = new Vector2(movementSpeed * inputHorizontal, playerRigidBody.linearVelocity.y);
+           
 
             
             flipPlayerSprite(inputHorizontal);
@@ -62,6 +78,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             playerAnimator.SetBool("isWalking", false);
+            InitialMovementSpeed = tempIMS;
         }
 
         //Debug.Log(inputHorizontal);
@@ -91,7 +108,6 @@ public class PlayerController : MonoBehaviour
         // Shorten jump if released early
         if (Input.GetKeyUp(KeyCode.Space) && isJumping)
         {
-            // Cut the upward velocity to make jump shorter
             playerRigidBody.linearVelocity = new Vector2(playerRigidBody.linearVelocity.x, playerRigidBody.linearVelocity.y * 0.5f);
             isJumping = false;
         }

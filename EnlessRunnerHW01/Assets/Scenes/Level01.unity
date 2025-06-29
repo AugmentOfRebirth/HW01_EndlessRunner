@@ -2663,6 +2663,14 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 232678751}
+    - target: {fileID: 625411788584023356, guid: 9279176e616e3c54bb7e4a211fe66d3e, type: 3}
+      propertyPath: InitialMovementSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 625411788584023356, guid: 9279176e616e3c54bb7e4a211fe66d3e, type: 3}
+      propertyPath: InitialMovementSpeedMult
+      value: 0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 7379232672331532364, guid: 9279176e616e3c54bb7e4a211fe66d3e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2670,6 +2678,18 @@ PrefabInstance:
     - target: {fileID: 7379232672331532364, guid: 9279176e616e3c54bb7e4a211fe66d3e, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630512797679208912, guid: 9279176e616e3c54bb7e4a211fe66d3e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630512797679208912, guid: 9279176e616e3c54bb7e4a211fe66d3e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630512797679208912, guid: 9279176e616e3c54bb7e4a211fe66d3e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 7630512797679208912, guid: 9279176e616e3c54bb7e4a211fe66d3e, type: 3}
       propertyPath: m_LocalPosition.x
