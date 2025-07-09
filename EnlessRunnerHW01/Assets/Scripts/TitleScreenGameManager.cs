@@ -3,17 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreenGameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    [SerializeField] GameObject panel;
 
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void startGame()
     {
         SceneManager.LoadScene("Level01");
@@ -21,5 +13,14 @@ public class TitleScreenGameManager : MonoBehaviour
     public void exitGame()
     {
         Application.Quit();
+    }
+
+    public void showPanel()
+    {
+        panel.SetActive(true);
+    }   
+    public void hidePanel()
+    {
+        panel.SetActive(false);
     }
 }
