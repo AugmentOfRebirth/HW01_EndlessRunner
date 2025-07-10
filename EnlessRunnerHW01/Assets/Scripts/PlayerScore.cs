@@ -93,6 +93,11 @@ public class PlayerScore : MonoBehaviour
         PlayerPrefs.Save();
 
     }
+    //public void powerupScore(int points)
+    //{
+    //    playerScore += points;
+    //    setGUIPlayerScore();
+    //}
 
 
 }

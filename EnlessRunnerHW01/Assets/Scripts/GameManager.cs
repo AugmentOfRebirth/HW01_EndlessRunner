@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     {
         playerScore = gameObject.GetComponent<PlayerScore>();
         isPaused = false;
+
     }
     void Update()
     {
@@ -98,4 +100,14 @@ public class GameManager : MonoBehaviour
     {
         playerScore.setPlayerScore(gameValMult);
     }
+    //public void powerupSpeed(int speed)
+    //{
+    //    StartCoroutine(SpeedBoostRoutine(speed));
+    //}
+    //IEnumerator SpeedBoostRoutine(int speed)
+    //{
+    //    Time.timeScale = speed;
+    //    yield return new WaitForSeconds(5);
+    //    Time.timeScale = 1;
+    //}
 }

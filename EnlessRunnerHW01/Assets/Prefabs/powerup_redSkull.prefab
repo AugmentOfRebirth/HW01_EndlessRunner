@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceEffector: {fileID: 0}
+  powerupType: 2
 --- !u!1 &8539292610902255416
 GameObject:
   m_ObjectHideFlags: 0
