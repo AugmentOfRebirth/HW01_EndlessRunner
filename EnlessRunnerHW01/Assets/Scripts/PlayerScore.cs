@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerScore : MonoBehaviour
@@ -30,4 +32,67 @@ public class PlayerScore : MonoBehaviour
         guiScore.text = "Score: ";
         guiScore.text += playerScore.ToString();
     }
+
+    public void newHighScore()
+    {
+        //int temp = getScore();
+        //if (temp > TitleScreenGameManager.hs1)
+        //{
+        //    temp = TitleScreenGameManager.hs1;
+        //    TitleScreenGameManager.hs1 = getScore();
+        //}
+        //else if (temp > TitleScreenGameManager.hs2)
+        //{
+        //    temp = TitleScreenGameManager.hs2;
+        //    TitleScreenGameManager.hs2 = getScore();
+        //}
+        //else if(temp > TitleScreenGameManager.hs3)
+        //{
+        //    temp = TitleScreenGameManager.hs3;
+        //    TitleScreenGameManager.hs3 = getScore();
+        //}
+        //else if (temp > TitleScreenGameManager.hs4)
+        //{
+        //    temp = TitleScreenGameManager.hs4;
+        //    TitleScreenGameManager.hs4 = getScore();
+        //}
+        //else if (temp > TitleScreenGameManager.hs5)
+        //{
+        //    temp = TitleScreenGameManager.hs5;
+        //    TitleScreenGameManager.hs5 = getScore();
+        //}
+
+        int temp = getScore();
+
+        int[] scores = new int[5];
+        scores[0] = PlayerPrefs.GetInt("HighScore1", 0);
+        scores[1] = PlayerPrefs.GetInt("HighScore2", 0);
+        scores[2] = PlayerPrefs.GetInt("HighScore3", 0);
+        scores[3] = PlayerPrefs.GetInt("HighScore4", 0);
+        scores[4] = PlayerPrefs.GetInt("HighScore5", 0);
+
+        for (int i = 0; i < scores.Length; i++)
+        {
+            if (temp > scores[i])
+            {
+                for (int ii = scores.Length - 1; ii > i; ii--)
+                {
+                    scores[ii] = scores[ii - 1];
+                }
+
+                scores[i] = temp;
+                break;
+            }
+        }
+
+        for (int i = 0; i < scores.Length; i++)
+        {
+            PlayerPrefs.SetInt("HighScore" + (i + 1), scores[i]);
+        }
+
+        PlayerPrefs.Save();
+
+    }
+
+
 }

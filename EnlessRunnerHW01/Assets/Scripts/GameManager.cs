@@ -69,8 +69,10 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         retryButton.SetActive(true);
         resumeButton.SetActive(false);
+        playerScore.newHighScore();
         showPauseMenu();
         //showScore();
+        
     }
     public void exitToTitle()
     {
@@ -83,15 +85,15 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void showScore()
-    {
-        if (playerScore.getScore() > PlayerPrefs.GetInt("Highscore"))
-        {
-            PlayerPrefs.SetInt("Highscore", playerScore.getScore());
-            //Debug.Log("New highscore");
-        }
-        finalScore.text = "Final Score: " + playerScore.getScore().ToString();
-    }
+    //public void showScore()
+    //{
+    //    if (playerScore.getScore() > PlayerPrefs.GetInt("Highscore"))
+    //    {
+    //        PlayerPrefs.SetInt("Highscore", playerScore.getScore());
+    //        //Debug.Log("New highscore");
+    //    }
+    //    finalScore.text = "Final Score: " + playerScore.getScore().ToString();
+    //}
     public void updateScore()
     {
         playerScore.setPlayerScore(gameValMult);
