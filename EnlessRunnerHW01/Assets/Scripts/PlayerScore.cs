@@ -35,33 +35,7 @@ public class PlayerScore : MonoBehaviour
 
     public void newHighScore()
     {
-        //int temp = getScore();
-        //if (temp > TitleScreenGameManager.hs1)
-        //{
-        //    temp = TitleScreenGameManager.hs1;
-        //    TitleScreenGameManager.hs1 = getScore();
-        //}
-        //else if (temp > TitleScreenGameManager.hs2)
-        //{
-        //    temp = TitleScreenGameManager.hs2;
-        //    TitleScreenGameManager.hs2 = getScore();
-        //}
-        //else if(temp > TitleScreenGameManager.hs3)
-        //{
-        //    temp = TitleScreenGameManager.hs3;
-        //    TitleScreenGameManager.hs3 = getScore();
-        //}
-        //else if (temp > TitleScreenGameManager.hs4)
-        //{
-        //    temp = TitleScreenGameManager.hs4;
-        //    TitleScreenGameManager.hs4 = getScore();
-        //}
-        //else if (temp > TitleScreenGameManager.hs5)
-        //{
-        //    temp = TitleScreenGameManager.hs5;
-        //    TitleScreenGameManager.hs5 = getScore();
-        //}
-
+        
         int temp = getScore();
 
         int[] scores = new int[5];
@@ -93,11 +67,11 @@ public class PlayerScore : MonoBehaviour
         PlayerPrefs.Save();
 
     }
-    //public void powerupScore(int points)
-    //{
-    //    playerScore += points;
-    //    setGUIPlayerScore();
-    //}
+    public void powerupScore(int points)
+    {
+        playerScore += points;
+        setGUIPlayerScore();
+    }
 
 
 }

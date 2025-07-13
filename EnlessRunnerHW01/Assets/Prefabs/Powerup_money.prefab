@@ -75,6 +75,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   surfaceEffector: {fileID: 0}
   powerupType: 1
+  pointsAmount: 50
+  speedAmount: 0
 --- !u!1 &6692119461310699959
 GameObject:
   m_ObjectHideFlags: 0

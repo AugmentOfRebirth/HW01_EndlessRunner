@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     //Drag and drop connection for Hierarchy
     public GameObject pauseMenu;
+    public TMP_Text pauseOrGameover;
     public TMP_Text finalScore;
     private PlayerScore playerScore;
     public GameObject retryButton;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
         //press E to pause the game
         if (Input.GetKeyDown(KeyCode.E) && !isPaused)
         {
+            pauseOrGameover.text = "   Paused";
             showPauseMenu();
             pauseGame();
         }
@@ -69,6 +71,7 @@ public class GameManager : MonoBehaviour
     public void gameOver()
     {
         Time.timeScale = 0;
+        pauseOrGameover.text = "Game Over";
         retryButton.SetActive(true);
         resumeButton.SetActive(false);
         playerScore.newHighScore();
