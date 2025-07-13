@@ -8,7 +8,7 @@ public class PlayerScore : MonoBehaviour
     //attached to game manager
     //drag connection for guiScore
     //when we kill an enemy we will call this script to increment/set the score.
-    private int playerScore;
+    int playerScore;
     public TMP_Text guiScore;
     void Start()
     {

@@ -11,6 +11,7 @@ TagManager:
   - Score
   - Speed
   - RedDeath
+  - Shrink
   layers:
   - Default
   - TransparentFX

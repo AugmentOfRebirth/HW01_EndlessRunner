@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +19,12 @@ public class PlayerController : MonoBehaviour
     private bool isJumping = false;
     private Animator playerAnimator;
     public GameManager gameManager;
+    private PlayerScore playerScore;
+    public GameObject redDeathSpawner;
+    private Vector3 originalScale;
+    Vector3 shrinkScale = new Vector3(0.5f, 0.5f, 1f);
+    public float shrinkDuration = 10f;
+    private Coroutine shrinkRoutine;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,6 +34,9 @@ public class PlayerController : MonoBehaviour
         //and this script is also attached to the player
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        playerScore = gameManager.GetComponent<PlayerScore>();
+
+        originalScale = transform.localScale;
         //maxNumJumps = 1;
         //numJumps = 1;
         tempIMS = InitialMovementSpeed;
@@ -125,24 +135,43 @@ public class PlayerController : MonoBehaviour
         {
             gameManager.gameOver();
         }
-        //else if (collision.gameObject.CompareTag("Enemy"))
+        //else if (collision.gameObject.CompareTag("Score"))
         //{
-        //    //restart the level
-        //    SceneManager.LoadScene("Level01");
+        //    playerScore.setPlayerScore(50);
+        //    Destroy(collision.gameObject);
         //}
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.gameObject.CompareTag("DoubleJump"))
-        //{
-        //    maxNumJumps = 2;
-        //    //Destroy(collision.gameObject);
-        //}
-        //if (collision.gameObject.CompareTag("OB"))
-        //{
-        //    //restart the level
-        //    SceneManager.LoadScene("Level01");
-        //}
-        
+        if (collision.gameObject.CompareTag("Score"))
+        {
+            playerScore.setPlayerScore(50);
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Shrink"))
+        {
+            if (shrinkRoutine != null)
+            {
+                StopCoroutine(shrinkRoutine);
+            }
+            
+            shrinkRoutine = StartCoroutine(shrink());
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.CompareTag("RedDeath"))
+        {
+            redDeathSpawner.SetActive(true);
+            Destroy(collision.gameObject);
+        }
+
+    }
+
+    IEnumerator shrink()
+    {
+        transform.localScale = shrinkScale;
+
+        yield return new WaitForSeconds(shrinkDuration);
+
+        transform.localScale = originalScale;
     }
 }

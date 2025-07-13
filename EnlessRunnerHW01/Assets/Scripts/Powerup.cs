@@ -5,43 +5,53 @@ public class Powerup : MonoBehaviour
 {
     public enum PowerupType
     {
-        SpeedBoost,
-        Points,
+        Normal,
         Death
     }
 
-    public SurfaceEffector2D surfaceEffector;
+    //public SurfaceEffector2D surfaceEffector;
     private Rigidbody2D rb;
+    private float speed = 1f;
     public PowerupType powerupType;
-    public int pointsAmount;
-    public int speedAmount;
-    private PlayerScore playerScore;
+    //public int pointsAmount;
+    //public int speedAmount;
+    //private PlayerScore playerScore;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        playerScore = gameObject.GetComponent<PlayerScore>();
+        //playerScore = gameObject.GetComponent<PlayerScore>();
+
+        if (powerupType == PowerupType.Normal)
+        {
+            rb.linearVelocity = Vector2.left * speed;
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.down * speed;
+        }
+        
     }
     private void FixedUpdate()
     {
         //the x is positive because the speed value is already negative
-        rb.linearVelocity = new Vector2(surfaceEffector.speed, 0);
+        
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            ApplyPowerup();
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        //ApplyPowerup();
 
-            Destroy(this.gameObject);
-        }
-    }
+    //        Destroy(this.gameObject);
+    //    }
+    //}
 
-    void ApplyPowerup()
-    {
-        if (powerupType == PowerupType.Points)
-        {
-            playerScore.powerupScore(pointsAmount);
-        }
-    }
+    //void ApplyPowerup()
+    //{
+    //    if (powerupType == PowerupType.Points)
+    //    {
+    //        playerScore.powerupScore(pointsAmount);
+    //    }
+    //}
 }
